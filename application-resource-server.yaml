@@ -1,0 +1,5 @@
+security:
+  oauth2:
+    resourceserver:
+      jwt:
+        jwk-set-uri: ${AUTH_BASE_URL:http://localhost:8090}/realms/${AUTH_REALM:time-orchestrator}/protocol/openid-connect/certs
