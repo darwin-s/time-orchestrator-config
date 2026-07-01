@@ -1,5 +1,6 @@
-security:
-  oauth2:
-    resourceserver:
-      jwt:
-        jwk-set-uri: ${AUTH_BASE_URL:http://localhost:8443}/realms/${AUTH_REALM:time-orchestrator}/protocol/openid-connect/certs
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${AUTH_BASE_URL:http://localhost:8443}/realms/${AUTH_REALM:time-orchestrator}
