@@ -3,9 +3,11 @@ spring:
     group:
       local:
         - "verbose"
+        - "flyway-dev"
       compose:
         - "verbose"
         - "db"
+        - "flyway-dev"
   jpa:
     hibernate:
       ddl-auto: validate
