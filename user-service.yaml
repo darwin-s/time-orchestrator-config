@@ -3,5 +3,5 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${AUTH_PUBLIC_URL:http://localhost:8443}/realms/${AUTH_REALM:time-orchestrator}
-          jwk-set-uri: ${AUTH_BASE_URL:http://localhost:8443}/realms/${AUTH_REALM:time-orchestrator}/protocol/openid-connect/certs
+          issuer-uri: ${AUTH_PUBLIC_URL:http://localhost:8443/realms/time-orchestrator}
+          jwk-set-uri: ${AUTH_JWK_SET_URL:http://localhost:8443/realms/time-orchestrator/protocol/openid-connect/certs}
