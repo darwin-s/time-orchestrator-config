@@ -33,7 +33,7 @@ management:
       export:
         otlp:
           endpoint: ${TRACING_EXPORT_ENDPOINT:http://localhost:4318/v1/traces}
-    otlp:
-      metrics:
-        export:
-          url: ${METRICS_EXPORT_ENDPOINT:http://localhost:4318/v1/metrics}
+  otlp:
+    metrics:
+      export:
+        url: ${METRICS_EXPORT_ENDPOINT:http://localhost:4318/v1/metrics}
