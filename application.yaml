@@ -4,6 +4,7 @@ spring:
       local:
         - "verbose"
         - "flyway-dev"
+        - "no-management"
       compose:
         - "verbose"
         - "db"
@@ -19,7 +20,20 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, prometheus
+        include: health
   endpoint:
     health:
-      show-details: when_authorized
+      show-details: never
+  opentelemetry:
+    logging:
+      export:
+        otlp:
+          endpoint: ${LOGGING_EXPORT_ENDPOINT:http://localhost:4318/v1/logs}
+    tracing:
+      export:
+        otlp:
+          endpoint: ${TRACING_EXPORT_ENDPOINT:http://localhost:4318/v1/traces}
+    otlp:
+      metrics:
+        export:
+          url: ${METRICS_EXPORT_ENDPOINT:http://localhost:4318/v1/metrics}
